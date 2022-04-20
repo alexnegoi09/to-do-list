@@ -70,33 +70,41 @@ function App() {
 
   const handleDelete = (id) => {
     setItems((prev) => prev.filter((item) => id !== item.id));
+    setItemArray((prev) =>
+      prev.filter((item) => id !== item.replace(" ", "").toLowerCase())
+    );
   };
 
   localStorage.setItem("items", JSON.stringify(items));
   localStorage.setItem("itemArray", JSON.stringify(itemArray));
-  console.log(localStorage);
 
   return (
-    <div>
-      <Form
-        input={inputValue}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      />
-      <p>{error}</p>
-      {items.length > 0
-        ? items.map((item) => (
-            <Item
-              input={item.body}
-              completed={item.completed}
-              key={item.id}
-              fieldValue={() => setInputValue()}
-              handleComplete={() => handleComplete(item.id)}
-              handleUndo={() => handleUndo(item.id)}
-              handleDelete={() => handleDelete(item.id)}
-            />
-          ))
-        : null}
+    <div className="main-container">
+      <section className="header-section">
+        <h1 className="header">My to do list</h1>
+        <Form
+          input={inputValue}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
+        <p className="text-danger error">{error}</p>
+      </section>
+      <ol className="task-list">
+        {items.length > 0
+          ? items.map((item) => (
+              <li key={item.id} className="list-item">
+                <Item
+                  input={item.body}
+                  completed={item.completed}
+                  fieldValue={() => setInputValue()}
+                  handleComplete={() => handleComplete(item.id)}
+                  handleUndo={() => handleUndo(item.id)}
+                  handleDelete={() => handleDelete(item.id)}
+                />
+              </li>
+            ))
+          : null}
+      </ol>
     </div>
   );
 }

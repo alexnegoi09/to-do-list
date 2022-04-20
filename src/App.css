@@ -1,1 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins, sans-serif;
+    font-weight: 700;
+    background-color: wheat;
+}
+
+.header-section {
+    background-color: white;
+    padding: 15px;
+    margin: 10% auto;
+    border-radius: 10px;
+}
+
+.header {
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-input {
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    margin-bottom: 7px;
+}
+
+.error {
+    font-weight: bold;
+}
+
+.main-input,
+.submit-btn,
+.error,
+.task-list {
+    font-size: 1.07rem;
+}
+
+.list-item {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.item-text {
+    margin-bottom: 7px;
+}
+
+.button-container {
+    display: flex;
+}
+
+.complete-undo-btn {
+    margin-right: 7px;
+    flex-grow: 1;
+}
+
+.delete-btn {
+    flex-grow: 1;
+}
+
+
+@media (min-width: 800px) {
+    body, html {
+        width: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+    .header-section {
+        margin: 4% 0 5% 4%;
+        min-width: 300px;
+    }
+
+    .header {
+        text-align: left;
+    }
+
+    .main-form {
+        flex-direction: row;
+    }
+
+    .main-input,
+    .submit-btn {
+        height: 100%;
+    }
+
+    .main-input,
+    .submit-btn,
+    .error {
+        font-size: 1rem;
+    }
+
+    .main-input {
+        margin-right: 10px;
+    }
+
+    .task-list {
+        margin: 0 0 5% 4%;
+    }
+
+    .header-section,
+    .task-list {
+        max-width: 600px;
+        word-wrap: break-word;
+    }
+
+    .header-section,
+    .item-container {
+        padding: 20px;
+    }
+
+    .item-container {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 1600px) {
+    .header-section,
+    .task-list {
+        max-width: 700px;
+    }
+}
+
+
+@media (min-width: 2200px) {
+    .header-section {
+        margin: 4% 0 3% 4%;
+    }
+
+    .header-section,
+    .task-list {
+        max-width: 800px;
+    }
+
+    .main-input,
+    .submit-btn,
+    .error,
+    .task-list {
+        font-size: 1.07rem;
+    }
+}
