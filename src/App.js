@@ -89,7 +89,7 @@ function App() {
         />
         <p className="text-danger error">{error}</p>
       </section>
-      <ol className="task-list">
+      <ul className="task-list">
         {items.length > 0
           ? items.map((item) => (
               <li key={item.id} className="list-item">
@@ -104,7 +104,7 @@ function App() {
               </li>
             ))
           : null}
-      </ol>
+      </ul>
     </div>
   );
 }
